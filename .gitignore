@@ -21,3 +21,6 @@
 
 ### phpstorm
 .idea
+
+### macos
+.DS_Store
