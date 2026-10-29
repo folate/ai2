@@ -1,0 +1,19 @@
+App\Entity\Measurement:
+    properties:
+        date:
+            - NotBlank:
+                message: 'Please select a date'
+                groups: ['new', 'edit']
+        celsius:
+            - NotBlank:
+                message: 'Please enter a temperature in Celsius'
+                groups: ['new', 'edit']
+            - Range:
+                min: -90
+                max: 60
+                notInRangeMessage: 'Temperature should be between {{ min }} and {{ max }}'
+                groups: ['new', 'edit']
+        location:
+            - NotBlank:
+                message: 'Please select a location'
+                groups: ['new', 'edit']

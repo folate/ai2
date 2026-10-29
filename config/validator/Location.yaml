@@ -1,0 +1,28 @@
+App\Entity\Location:
+    properties:
+        city:
+            - NotBlank:
+                message: 'Please enter a city name'
+                groups: ['new', 'edit']
+        country:
+            - NotBlank:
+                message: "Value shouldn't be empty"
+                groups: ['new', 'edit']
+        latitude:
+            - NotBlank:
+                message: "Value shouldn't be empty"
+                groups: ['new', 'edit']
+            - Range:
+                min: -90
+                max: 90
+                notInRangeMessage: 'This value should be between {{ min }} and {{ max }}'
+                groups: ['new', 'edit']
+        longitude:
+            - NotBlank:
+                message: "Value shouldn't be empty"
+                groups: ['new', 'edit']
+            - Range:
+                min: -180
+                max: 180
+                notInRangeMessage: 'This value should be between {{ min }} and {{ max }}'
+                groups: ['new', 'edit']
